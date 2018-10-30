@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>mySecondBootstrap</title>
+    <link rel="stylesheet"  href="/lib/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- 头部导航栏 -->
+    <div class="container">
+        <header></header>
+    </div><!-- /.container -->
+
+    <!-- 提示条 -->
+    <div class="row ">
+        <div class="alert alert-info col-md-10 col-md-offset-1" role="alert">基于NodeJS+Express+EJS+MongoDB的职位管理系统</div>
+    </div>
+
+
+
+    <!-- regModal -->
+  
+
+    <!--positionModal  -->
+    <div class="modal fade" id="positionModal" tabindex="-1"  >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">职位管理</h4>
+          </div>
+          <div class="modal-body">
+            <!-- 信息收集表单 -->
+            <form>
+              <div class="form-group">
+                <label for="companyLogo">公司Logo</label>
+                  <input type="file" id="companyLogo" class="form-control" style="padding-bottom: 30px;">
+              </div>
+              <div class="form-group">
+                <label for="positionName">职位名称</label>
+                <input type="text" class="form-control" id="positionName" placeholder="请输入职位名称">
+              </div>
+              <div class="form-group">
+                <label for="companyName">公司名称</label>
+                <input type="text" class="form-control" id="companyName" placeholder="请输入公司名称">
+              </div>
+              <div class="form-group">
+                <label for="workExprience">工作经验</label>
+                <input type="text" class="form-control" id="workExprience" placeholder="请输入工作经验">
+              </div>
+              <div class="form-group">
+                <label for="positionType">职位类型</label>
+                <input type="text" class="form-control" id="positionType" placeholder="请输入职位类型">
+              </div>
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary">保存</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- js代码 -->
+    <script src="/lib/jquery/jquery-1.12.4.min.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <!-- 导入可复用部分 -->
+     <script src="/js/common/login.js"></script>
+     <script src="/js/common/register.js"></script>
+     <script src="/js/common/logout.js"></script>
+    <script src="/js/common/header.js"></script>
+</body>
+</html>
