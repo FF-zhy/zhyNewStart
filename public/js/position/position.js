@@ -90,14 +90,15 @@ $.extend(Position.prototype, {
         // 获取当前行
         const tr = $(event.target).parent("td").parent("tr");
         const id = tr.find(".company-id").text();
-        const url = "/api/position/delete_by_id";
 
+
+        const url = "/api/position/delete_by_id";
         // 删除数据库
         $.post(url,{id : id},(data) => {
             if(data.res_code === 1){
                 console.log(data);
                 // 删除DOM元素
-                tr.remove();
+               // tr.remove();
             }else{
                 console.log("删除失败");
             }

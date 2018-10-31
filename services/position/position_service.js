@@ -56,26 +56,43 @@ const PositionService = {
     //删除数据
     deleteById(req, res, next) {
         const id = req.body;
-        console.log("deleteById—————— ",id);
         // 数据库操作
+        console.log( "deleteByIdDao__________",PositionDao.deleteByIdDao(id.id) );
         PositionDao.deleteByIdDao(id.id)
+                    .then( (data) => {
+                        res.json({
+                            res_code: 1,
+                            res_error: "",
+                            res_body: {}
+                        });
+                    })
+                    .catch((err) =>{
+                        res.json({
+                            res_code: 0,
+                            res_error: err,
+                            res_body: {}
+                        });
+                    })
+            
+    },
+    // 修改职位信息
+    modifyById(req, res, next) {
+        // 获取待更新的id,以及相关数据，post
+        const {id,company,posName, salary} = req.body;
+        //数据库更新
+        PositionDao.modify({company, posName, salary,id})
                     .then((data) => {
                         res.json({
                             res_code:1,
-                            res_error:""
-                        }) 
-                    })
-                    .catch((err) => {
-                        res.json({
-                            res_code :0,
-                            res_error : err
+                            res_error:"",
+                            res_body:{
+                                
+                            }
                         })
                     })
-    },
-    // 修改职位信息
-    modify_by_id(req, res, next) {
-        // 获取待更新的id,以及相关数据，post
-        const {id} = req.body;
+                    .catch((err) => {
+
+                    })
     }
 
 };
